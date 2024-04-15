@@ -9,7 +9,7 @@ const IntroBox = () => {
             <p
             className="text-lg my-12"
             >
-                Hi, my name is Jacob Welsh, I am a dedciated and driven senior at UNCC, 
+                Hi, my name is Jacob Welsh, I am a dedicated and driven senior at UNCC, 
                 majoring in Computer with with a concentration in Software Engineering.
                 Click to the Projects tab to check out my work!
             </p>

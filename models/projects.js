@@ -13,7 +13,7 @@ const projects = [
     {
          id: 1,
          title: "Better Reddit",
-         summary: "Reddit, also known as Better Reddit, represents my inaugural venture into full-stack application development. This project was undertaken as a collaborative effort within the context of my software engineering coursework. It boasts a PostgreSQL backend, incorporates user authentication through Bcrypt, and leverages Flask and SQLAlchemy for its implementation.",
+         summary: "Beddit, also known as Better Reddit, represents my inaugural venture into full-stack application development. This project was undertaken as a collaborative effort within the context of my software engineering coursework. It boasts a PostgreSQL backend, incorporates user authentication through Bcrypt, and leverages Flask and SQLAlchemy for its implementation.",
          features: "Postgres SQL Database, User Authentication",
          role: "Lead Backend Developer",
          technologies: "Python Flask",

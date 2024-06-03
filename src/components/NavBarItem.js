@@ -2,10 +2,13 @@ import * as React from "react"
 
 const NavBarItem = ({ setPageState, children }) => {
     return (
-        <button  
-        className="rounded-lg px-3 py-2 text-slate-200 font-medium hover:bg-slate-100 hover:text-slate-900"
+        <li>
+        <a
+        className="text-xs lg:text-sm font-semibold text-slate-600 tracking-tighter transition-colors hover:text-cyan-400"
         onClick={() => setPageState(children)}
-        >{children}</button>
+        >{children}</a>
+        </li>
+        
     )
 }
 

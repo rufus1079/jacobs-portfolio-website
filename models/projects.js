@@ -24,7 +24,7 @@ const projects = [
     },
     {
         id: 2,
-        title: "Hope Love and Peace",
+        title: "Hope, Love, and Peace",
         summary: "Hope, Love, and Peace represents my initial foray into website creation. Developed utilizing standard web technologies such as HTML, CSS, and JavaScript, this website was specifically crafted to support the online presence of my mother's church ministry.",
         features: "Image Slideshow, Multiple Pages, Javascript",
         role: "Owner and Creator",

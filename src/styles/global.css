@@ -1,3 +1,198 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    * {
+    margin: 0;
+    line-height: calc(1em + 0.5rem); 
+    }
+
+    html {
+        scroll-behavior: smooth;
+       background-color: transparent;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        @apply bg-slate-100 dark:bg-[#070a13];
+    }
+
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+        user-select: none;
+    }
+
+    button {
+        display: inline-block;
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+}
+
+@layer components {
+
+    .icon {
+        box-shadow: 0 10px 20px rgb(34, 211, 238, 0.5), 0 6px 6px rgb(34, 211, 238, 0.5), 0 0 60px -10px #22d3ee;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .icon:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgb(34, 211, 238, 0.25), 0 6px 6px rgb(34, 211, 238, 0.22), 0 0 80px -10px #22d3ee;
+    }
+
+
+
+    .modal {
+        z-index: 40;
+    }
+    .modal, .overlay {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+    }
+    
+    .overlay {
+        background: rgba(49,49,49,0.8);
+ 
+    }
+    .modal-content {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1.4;
+        background-color: #22d3ee;
+        box-shadow: 0 10px 20px rgb(34, 211, 238, 0.2), 0 6px 6px rgb(34, 211, 238, 0.2), 0 0 15px -10px #22d3ee;
+        border-radius: 6px;
+        padding: 14px 28px;
+        max-width: 600px;
+        min-width: 300px;
+
+    }
+    
+
+    .project__summary{
+        text-decoration: none;
+        letter-spacing: -0.05em;
+        background-color: #22d3ee;
+        padding: 0.5em 1em;
+        border-radius: 6px;
+        max-width: 50ch;
+        box-shadow: 0 10px 20px rgb(34, 211, 238, 0.2), 0 6px 6px rgb(34, 211, 238, 0.2), 0 0 15px -10px #22d3ee;
+        animation-name: slideLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        animation-iteration-count: 1;
+
+    }
+
+    .project__img {
+        height: 600px;
+        width: 800px;
+
+    }
+
+    .project__img-wrapper{
+        position: relative;
+    }
+
+    .project__img-wrapper::after {
+        content: '';
+        background-color: rgba(79,70,229, 0.8);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+        z-index: 1;
+        transition: background-color 0.5s;
+        border-radius: 0.375rem
+    }
+
+
+    .project__img-wrapper:hover:after {
+        background-color:rgba(79,70,229, 0.1);;
+    }
+
+    
+    .logo svg path {
+        stroke-dashoffset: 1800; 
+        stroke-dasharray: 1800 ;
+        animation: draw 10s forwards;
+    }
+    .logo svg g {
+        fill-opacity: 0;
+        animation: fill-in 2s 10s forwards;
+    }
+
+
+    .project__slideLeft {
+        transform: translate(-350px);
+        transition-duration: 1s;
+        transition-timing-function: ease-in;
+    }
+
+    .project__slideRight {
+        transform: translate(0px);
+        transition-duration: 1s;
+        transition-timing-function: ease-in;
+    }
+
+    @keyframes draw {
+        to {
+            stroke-dashoffset: 0;
+            
+        }
+    }
+
+    @keyframes fill-in {
+        to {
+            fill-opacity: 1;
+        }
+    }
+}
+
+
+
+@layer utilities {
+
+    .btn {
+        display: inline-block;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: -0.05em;
+        background-color: #22d3ee;
+        padding: 0.5em 1em;
+        border-radius: 6px;
+        box-shadow: 0 10px 20px rgb(34, 211, 238, 0.5), 0 6px 6px rgb(34, 211, 238, 0.5), 0 0 100px -10px #22d3ee;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgb(34, 211, 238, 0.25), 0 6px 6px rgb(34, 211, 238, 0.22), 0 0 120px -10px #22d3ee;
+    }
+
+    .image {
+        display: inline-block;
+        padding: 0.25em;
+        box-shadow: 0 10px 20px rgb(4, 70, 98, 0.5), 0 6px 6px rgb(4, 70, 98, 0.5), 0 0 50px -10px #044662;
+    }
+
+    .section {
+        margin-top: 5rem;
+    }
+}

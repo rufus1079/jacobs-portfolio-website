@@ -1,50 +1,61 @@
 import * as React from "react"
+import { FiLink } from "react-icons/fi";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
-const ProjectContainer = ({ project }) => {
-    
-    const [hidden, setHidden] = React.useState("xl:absolute xl:left-10xl xl:top-8xl z-10 p-base ");
-    const [popUp, setPopUp] = React.useState(false);
+
+const ProjectContainer = ({ project, setProjectState }) => {
 
     return (
 
-        <>
-        {popUp === true
-        ?<div className="modal" onClick={() => setPopUp(false)}>
-            <div className="overlay"></div>
-            <div className="modal-content text-xs md:text-base xs:text-sm lg:text-lg" >
-            <p className=" text-gray-600"><strong>Features:</strong> {project.features}</p>
-            <p className=" text-gray-600"><strong>Role:</strong> {project.role}</p>
-            <p className=" text-gray-600"><strong>Technologies:</strong> {project.technologies}</p>
-            <p className=" text-gray-600"><strong>Purpose:</strong> {project.purpose}</p>
-            <p className=" text-gray-600"><strong>Spotlight:</strong> {project.spotlight}</p>
-        </div>
-        </div>
-        :<></>}
-        
-        <div className="container mx-auto my-auto xl:relative">
-          <div className="flex items-center justify-center flex-col">
-            <div className={hidden}>
-                <h2 className="text-cyan-400  xs:text-base lg:text-4xl font-semibold">{project.title}</h2>
-                <p className="text-sm xs:text-base lg:text-lg project__summary"><strong>Summary:</strong> {project.summary}</p>
-                <a className="text-cyan-400 underline" onClick={() => setPopUp(true)}>Learn More</a>
+        <div className="container mx-auto my-auto">
+            <button className="flex items-center gap-xxs text-sm capitalize text-[#070a13] dark:text-slate-100 font-normal xs:text-base lg:text-lg xl:text-xl underline" onClick={() => setProjectState(0)}><IoIosArrowRoundBack />Go Back</button>
+            <h2 className="flex items-center gap-xxs text-2xl text-[#070a13] dark:text-slate-100 sm:text-3xl lg:text-4xl xl:text-5xl py-base">{project.title} <a aria-label="Proejct Link" href=""><FiLink /></a></h2>
+            <p className="text-sm xs:text-base lg:text-lg xl:text-xl text-slate-600 max-w-[60ch] lg:max-w-[80ch]">{project.summary}</p>
+            <h3 className="text-base capitalize mb-xxs xs:text-lg lg:text-xl xl:text-2xl pt-base text-[#070a13] dark:text-slate-100">Spotlight</h3>
+            <p className=" text-sm xs:text-base lg:text-lg xl:text-xl text-slate-600 max-w-[60ch] lg:max-w-[80ch]">{project.spotlight}</p>
+
+
+            <div className="flex flex-wrap gap-base">
+                <div className="flex-[1] min-w-[250px]">
+                    <h3 className="text-base capitalize mb-xxs xs:text-lg lg:text-xl xl:text-2xl text-[#070a13] dark:text-slate-100 pt-base">Features</h3>
+                    <ul className=" text-sm xs:text-base lg:text-lg xl:text-xl text-slate-600">
+                        {project.features.map(element => {
+                            return (
+                                <li className="">{element}</li>
+                            )
+                        })}
+                    </ul>
+                </div>
+                <div className="flex-[1] min-w-[250px]">
+                    <h3 className="text-base capitalize mb-xxs xs:text-lg lg:text-xl xl:text-2xl text-[#070a13] dark:text-slate-100 sm:pt-base">Technologies</h3>
+                    <ul className=" text-sm xs:text-base lg:text-lg xl:text-xl text-slate-600">
+                        {project.technologies.map(element => {
+                            return (
+                                <li className="">{element}</li>
+                            )
+                        })}
+                    </ul>
+                </div>
+                <div className="flex-[1] min-w-[250px]">
+                    <h3 className="text-base capitalize mb-xxs xs:text-lg lg:text-xl xl:text-2xl text-[#070a13] dark:text-slate-100 lg:pt-base">Role</h3>
+                    <ul className=" text-sm xs:text-base lg:text-lg xl:text-xl text-slate-600">
+                        <li>{project.role}</li>
+                    </ul>
+                </div>
+                <div className="flex-[1] min-w-[250px]">
+                    <h3 className="text-base capitalize mb-xxs xs:text-lg lg:text-xl xl:text-2xl text-[#070a13] dark:text-slate-100 xl:pt-base">Purpose</h3>
+                    <ul className=" text-sm xs:text-base lg:text-lg xl:text-xl text-slate-600">
+                        <li>{project.purpose}</li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div className="project__img-wrapper" onMouseEnter={() => setHidden("xl:absolute xl:left-10xl xl:top-8xl xl:project__slideLeft z-10 p-base")} onMouseLeave={() => setHidden("xl:absolute xl:left-10xl xl:top-8xl xl:project__slideRight z-10 p-base")}>
-            <img 
-            className="project__img rounded-md"
-            src={project.images[0]} 
-            alt=""
-            
-            />
-            </div>
 
-            
-           
-        </div>  
+
         </div>
-        
-        </>
-        
+
+
     )
 }
 

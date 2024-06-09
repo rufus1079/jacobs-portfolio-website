@@ -6,7 +6,7 @@ const PhotoBox = () => {
             <img 
             src={headshot} 
             alt="Jacob"
-            className=" max-w-[60ch] max-h-[60ch] image rounded-lg"
+            className="lazy max-w-[60ch] max-h-[60ch] image rounded-lg lg:mr-8xl"
             ></img>
     )
 }

@@ -3,70 +3,102 @@ import ProjectContainer from "./ProjectContainer"
 import projects from "../../models/projects"
 
 const Showcase = () => {
-    const [projectState, setProjectState] = React.useState(0)
-
+    const [hiddenP1, setHiddenP1] = React.useState("xl:absolute xl:top-8xl z-10 p-base ");
+    const [hiddenP2, setHiddenP2] = React.useState("xl:absolute xl:right-[0rem] xl:top-8xl z-10 p-base xl:text-right ");
+    const [hiddenP3, setHiddenP3] = React.useState("xl:absolute xl:top-8xl z-10 p-base ");
+    const [hiddenP4, setHiddenP4] = React.useState("xl:absolute xl:top-8xl z-10 p-base xl:right-[0rem] xl:text-right");
+    const [projectState, setProjectState] = React.useState(0);
     return (
 
-        <div className="container mx-auto my-auto section">
-            <h1 className="text-2xl text-[#070a13] dark:text-slate-100 text-center xs:text-3xl lg:text-4xl xl:text-5xl p-base"><strong>Latest Work</strong></h1>
-            
-            <div>
-                {projectState === 1
-                    ? <ProjectContainer project={projects[0]} />
-                    : projectState === 2
-                        ? <ProjectContainer project={projects[1]} />
-                        : projectState === 3
-                            ? <ProjectContainer project={projects[2]} />
-                            : projectState === 4
-                                ? <ProjectContainer project={projects[3]} />
-                                : <p className="max-w-[60ch] text-sm text-slate-600 text-center m-auto p-base xs:text-base xs:p-2xl lg:text-lg xl:text-xl xl:p-4xl">Commodo deserunt minim labore duis fugiat aliqua incididunt. Elit enim Lorem duis laborum laborum reprehenderit tempor eu commodo. Duis aliquip id cillum ex in. Dolore eiusmod duis exercitation elit cupidatat proident est. Incididunt mollit aliqua ad tempor in esse ad cillum do velit sint non nostrud. Veniam deserunt veniam anim fugiat eu anim.</p>
+        <>
+            {projectState === 1
+                ? <ProjectContainer project={projects[0]} setProjectState={setProjectState} />
+                : projectState === 2
+                    ? <ProjectContainer project={projects[1]} setProjectState={setProjectState} />
+                    : projectState === 3
+                        ? <ProjectContainer project={projects[2]} setProjectState={setProjectState} />
+                        : projectState === 4
+                            ? <ProjectContainer project={projects[3]} setProjectState={setProjectState} />
+                            :<><h2 className="text-2xl text-[#070a13] dark:text-slate-100 sm:text-3xl lg:text-4xl xl:text-5xl text-center p-base lg:p-2xl">Check out some of my favorite projects that I’ve worked on!</h2>
+                                <div className="container mx-auto my-auto showcase ">
+                                <div className="xl:relative">
+                                    <div className={hiddenP1}>
+                                        <h2 className="text-cyan-400  xs:text-base lg:text-4xl font-semibold ">{projects[0].title}</h2>
+                                        <button className="text-cyan-400 underline">Learn More</button>
+                                    </div>
 
-                }
+                                    <div className="project__img-wrapper" role="presentation" onClick={() => setProjectState(1)} onMouseEnter={() => setHiddenP1("xl:absolute xl:top-8xl xl:project__slideLeft_p1 z-10 p-base ")} onMouseLeave={() => setHiddenP1("xl:absolute xl:top-8xl xl:project__slideRight_p1 z-10 p-base")}>
+                                        <img
+                                            className="lazy rounded-md"
 
-            </div>
-            <div>
-                <ul className="flex flex-row justify-center items-center sm:gap-6xl lg:gap-7xl gap-3xl py-6xl">
-                    <li>
-                        <img
-                            src={projects[0].logo}
-                            alt="Beddit Logo"
-                            className="rounded-full  h-6xl w-6xl sm:w-7xl sm:h-7xl lg:w-8xl lg:h-8xl image bg-gradient-to-r from-cyan-500 to-blue-500 "
-                            onClick={() => setProjectState(1)}
-                        ></img>
-                    </li>
-                    <li>
-                        <img
-                            src={projects[1].logo}
-                            alt="Hope Love and Peace Logo"
-                            className="rounded-full h-6xl w-6xl sm:w-7xl sm:h-7xl lg:w-8xl lg:h-8xl image bg-gradient-to-r from-cyan-500 to-blue-500"
-                            onClick={() => setProjectState(2)}
-                        ></img>
-                    </li>
-                    <li>
-                        <img
-                            src={projects[2].logo}
-                            alt="Unwrapped Logo"
-                            className="rounded-full h-6xl w-6xl sm:w-7xl sm:h-7xl lg:w-8xl lg:h-8xl image bg-gradient-to-r from-cyan-500 to-blue-500"
-                            onClick={() => setProjectState(3)}
-                        ></img>
-                    </li>
-                    <li>
-                        <img
-                            src={projects[3].logo}
-                            alt="Blank Pages Logo w-8xl h-8xl" 
-                            className="rounded-full h-6xl w-6xl sm:w-7xl sm:h-7xl lg:w-8xl lg:h-8xl image bg-gradient-to-r from-cyan-500 to-blue-500"
-                            onClick={() => setProjectState(4)}
-                        ></img>
-                    </li>
-                </ul>
+                                            src={projects[0].images[0]}
+                                            alt=""
+
+                                        />
+                                    </div>
 
 
 
+                                </div>
+                                <div className=" xl:relative">
+                                    <div className={hiddenP2}>
+                                        <h2 className="text-cyan-400  xs:text-base lg:text-4xl font-semibold">{projects[1].title}</h2>
+                                        <button className="text-cyan-400 underline">Learn More</button>
+                                    </div>
+
+                                    <div className="project__img-wrapper" role="presentation" onClick={() => setProjectState(2)} onMouseEnter={() => setHiddenP2("xl:absolute xl:top-8xl xl:project__slideRight_p2 z-10 p-base xl:right-[0rem] xl:text-right")} onMouseLeave={() => setHiddenP2("xl:absolute xl:top-8xl xl:project__slideLeft_p2 z-10 p-base xl:right-[0rem] xl:text-right")}>
+                                        <img
+                                            className="lazy rounded-md"
+                                            src={projects[1].images[0]}
+                                            alt=""
+
+                                        />
+                                    </div>
 
 
 
-            </div>
-        </div>
+                                </div>
+                                <div className="xl:relative">
+                                    <div className={hiddenP3}>
+                                        <h2 className="text-cyan-400  xs:text-base lg:text-4xl font-semibold">{projects[2].title}</h2>
+                                        <button className="text-cyan-400 underline">Learn More</button>
+                                    </div>
+
+                                    <div className="project__img-wrapper" role="presentation" onClick={() => setProjectState(3)} onMouseEnter={() => setHiddenP3("xl:absolute xl:top-8xl xl:project__slideLeft_p3 z-10 p-base")} onMouseLeave={() => setHiddenP3("xl:absolute  xl:top-8xl xl:project__slideRight_p3 z-10 p-base")}>
+                                        <img
+                                            className="lazy  rounded-md"
+                                            src={projects[2].images[0]}
+                                            alt=""
+
+                                        />
+                                    </div>
+
+
+
+                                </div>
+                                <div className=" xl:relative">
+                                    <div className={hiddenP4}>
+                                        <h2 className="text-cyan-400  xs:text-base lg:text-4xl font-semibold">{projects[3].title}</h2>
+                                        <button className="text-cyan-400 underline">Learn More</button>
+                                    </div>
+
+                                    <div className="project__img-wrapper" role="presentation" onClick={() => setProjectState(4)} onMouseEnter={() => setHiddenP4("xl:absolute  xl:top-8xl xl:project__slideRight_p4 z-10 p-base xl:right-[0rem] xl:text-right")} onMouseLeave={() => setHiddenP4("xl:absolute  xl:top-8xl xl:project__slideLeft_p4 z-10 p-base xl:right-[0rem] xl:text-right")}>
+                                        <img
+                                            className="lazy  rounded-md"
+                                            src={projects[3].images[0]}
+                                            alt=""
+
+                                        />
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+            </>}
+
+        </>
+
     )
 }
 

@@ -1,6 +1,5 @@
 import * as React from "react"
 import NavBarItem from "./NavBarItem"
-import Name from "./Name"
 
 const NavBar = ({setPageState}) => {
     const [toggleMenu, setToggleMenu] = React.useState(false);
@@ -32,6 +31,7 @@ const NavBar = ({setPageState}) => {
             <nav >
                 <ul className=" hidden md:flex items-center list-none p-0 gap-4xl ">
                     <li><button
+                    aria-label="Return to home"
                     className="absolute top-base left-4xl h-4xl w-4xl text-cyan-400 fill-[#070a13] dark:fill-slate-100 py-xl"
                     onClick={() => setPageState('Home')}
                     ><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 563 563" >
@@ -45,14 +45,14 @@ const NavBar = ({setPageState}) => {
                     <NavBarItem setPageState={setPageState}>Contact</NavBarItem>
                     <li className=" border border-slate-600 border-solid py-xl"></li>
                     <li>
-                    <button className="block text-slate-600 h-base w-base " onClick={()=> handleDarkModeToggle()}>
+                    <button aria-label="Dark Mode Toggle" className="block text-slate-600 h-base w-base " onClick={()=> handleDarkModeToggle()}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
                         </svg>
                     </button></li>
                    
                 </ul>
-                <button className="text-slate-600 w-2xl h-2xl block md:hidden" onClick={() => handleMobileMenu()}>
+                <button aria-label="Mobile Menu" className="text-slate-600 w-2xl h-2xl block md:hidden" onClick={() => handleMobileMenu()}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
@@ -60,10 +60,11 @@ const NavBar = ({setPageState}) => {
             </nav>
         </header>
         {toggleMenu === true
-        ? <div className="absolute top-[0] left-[0] z-[30] w-full h-full bg-slate-100 dark:bg-[#070a13] flex justify-center items-center text-center md:hidden ">
+        ? <div className="absolute top-[0] left-[0] z-[30] w-full h-full  flex justify-center items-center text-center md:hidden ">
         <nav>
-        <ul className=" list-none p-[0] flex flex-col justify-center items-center gap-base">
+        <ul className=" list-none p-[0] flex flex-col gap-base">
                     <li><button
+                    aria-label="Return to home"
                     className="h-4xl w-4xl text-cyan-400 fill-slate-100"
                     onClick={() => setPageState('Home')}
                     ><svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 563 563" >
@@ -77,7 +78,7 @@ const NavBar = ({setPageState}) => {
                     <NavBarItem setPageState={setPageState}>Contact</NavBarItem>
                     <li className=" border border-slate-600 border-solid pr-xl"></li>
                     <li>
-                    <button className="block text-slate-600 h-base w-base" onClick={()=> handleDarkModeToggle()} >
+                    <button aria-label="Dark Mode Toggle" className="block text-slate-600 h-base w-base" onClick={()=> handleDarkModeToggle()} >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
                         </svg>

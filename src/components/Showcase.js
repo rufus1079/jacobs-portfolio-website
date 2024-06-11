@@ -23,8 +23,8 @@ const Showcase = () => {
                                 <div className="container mx-auto my-auto showcase ">
                                 <div className="xl:relative">
                                     <div className={hiddenP1}>
-                                        <h2 className="text-cyan-400  xs:text-base lg:text-4xl font-semibold ">{projects[0].title}</h2>
-                                        <button className="text-cyan-400 underline">Learn More</button>
+                                        <h2 className="text-sky-500  xs:text-base lg:text-4xl font-semibold ">{projects[0].title}</h2>
+                                        <button className="text-sky-500 underline" onClick={() => setProjectState(1)}>Learn More</button>
                                     </div>
 
                                     <div className="project__img-wrapper" role="presentation" onClick={() => setProjectState(1)} onMouseEnter={() => setHiddenP1("xl:absolute xl:top-8xl xl:project__slideLeft_p1 z-10 p-base ")} onMouseLeave={() => setHiddenP1("xl:absolute xl:top-8xl xl:project__slideRight_p1 z-10 p-base")}>
@@ -42,8 +42,8 @@ const Showcase = () => {
                                 </div>
                                 <div className=" xl:relative">
                                     <div className={hiddenP2}>
-                                        <h2 className="text-cyan-400  xs:text-base lg:text-4xl font-semibold">{projects[1].title}</h2>
-                                        <button className="text-cyan-400 underline">Learn More</button>
+                                        <h2 className="text-sky-500  xs:text-base lg:text-4xl font-semibold">{projects[1].title}</h2>
+                                        <button className="text-sky-500 underline" onClick={() => setProjectState(2)}>Learn More</button>
                                     </div>
 
                                     <div className="project__img-wrapper" role="presentation" onClick={() => setProjectState(2)} onMouseEnter={() => setHiddenP2("xl:absolute xl:top-8xl xl:project__slideRight_p2 z-10 p-base xl:right-[0rem] xl:text-right")} onMouseLeave={() => setHiddenP2("xl:absolute xl:top-8xl xl:project__slideLeft_p2 z-10 p-base xl:right-[0rem] xl:text-right")}>
@@ -60,8 +60,8 @@ const Showcase = () => {
                                 </div>
                                 <div className="xl:relative">
                                     <div className={hiddenP3}>
-                                        <h2 className="text-cyan-400  xs:text-base lg:text-4xl font-semibold">{projects[2].title}</h2>
-                                        <button className="text-cyan-400 underline">Learn More</button>
+                                        <h2 className="text-sky-500  xs:text-base lg:text-4xl font-semibold">{projects[2].title}</h2>
+                                        <button className="text-sky-500 underline" onClick={() => setProjectState(3)}>Learn More</button>
                                     </div>
 
                                     <div className="project__img-wrapper" role="presentation" onClick={() => setProjectState(3)} onMouseEnter={() => setHiddenP3("xl:absolute xl:top-8xl xl:project__slideLeft_p3 z-10 p-base")} onMouseLeave={() => setHiddenP3("xl:absolute  xl:top-8xl xl:project__slideRight_p3 z-10 p-base")}>
@@ -78,8 +78,8 @@ const Showcase = () => {
                                 </div>
                                 <div className=" xl:relative">
                                     <div className={hiddenP4}>
-                                        <h2 className="text-cyan-400  xs:text-base lg:text-4xl font-semibold">{projects[3].title}</h2>
-                                        <button className="text-cyan-400 underline">Learn More</button>
+                                        <h2 className="text-sky-500  xs:text-base lg:text-4xl font-semibold">{projects[3].title}</h2>
+                                        <button className="text-sky-500 underline" onClick={() => setProjectState(4)}>Learn More</button>
                                     </div>
 
                                     <div className="project__img-wrapper" role="presentation" onClick={() => setProjectState(4)} onMouseEnter={() => setHiddenP4("xl:absolute  xl:top-8xl xl:project__slideRight_p4 z-10 p-base xl:right-[0rem] xl:text-right")} onMouseLeave={() => setHiddenP4("xl:absolute  xl:top-8xl xl:project__slideLeft_p4 z-10 p-base xl:right-[0rem] xl:text-right")}>
